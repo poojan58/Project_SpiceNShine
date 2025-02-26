@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Areas/Manager/Views/Shared/_Layout.cshtml";
+    ViewBag.MetaTitle = "DashBoard";
+   
+}
+<div class="pcoded-main-container Design">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <p>Dashboard</p>
+               
+                @if (!string.IsNullOrEmpty(ViewBag.Message))
+                {
+                    <script>
+                        $(document).ready(function () {
+                            showToastPortal('@ViewBag.MessageType', '', '@ViewBag.Message', 0);
+                        });
+                    </script>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,123 @@
+﻿@model AddEditProductCategoryViewModel
+@{
+    ViewBag.MetaTitle = "Add Edit Product Category";
+    Layout = "~/Areas/Manager/Views/Shared/_Layout.cshtml";
+}
+<link href="~/lib/jcrop/css/jquery.jcrop.css" rel="stylesheet" />
+<script src="~/lib/jcrop/js/jquery.jcrop.js"></script>
+<style>
+    .jcrop-tracker {
+        width: 33% !important;
+        height: 70% !important;
+    }
+
+    .jcrop-holder img {
+        width: 33% !important;
+        height: 70% !important;
+    }
+</style>
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var validator = $("#productCategoryForm").data("validator");
+            validator.settings.ignore = "";          
+        });
+        $('#DisplayOrder').keypress(function (event) {
+            if (event.which != 8 && isNaN(String.fromCharCode(event.which))) {
+                event.preventDefault();
+            }
+        });
+
+    </script>
+}
+
+<div class="pcoded-main-container add-cms-page proj-bg-color">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <!-- [ fixed-menu ] start -->
+                            <div class="col-sm-12">
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        @if (Model.ProductCategoryID > 0)
+                                        {
+                                            <h5>Edit Product Category</h5>
+                                        }
+                                        else
+                                        {
+                                            <h5>Add Product Category</h5>
+                                        }
+                                        <div class="card-header-right">
+                                            <div class="btn-group card-option">
+                                                <a href="@Url.Action("ProductCategoryList","ProductCategory")" class="btn btn-primary">List</a>
+                                                <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="feather icon-more-horizontal"></i>
+                                                </button>
+                                                <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                                    <li class="dropdown-item full-card"><a href="javascript:"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
+                                                    <li class="dropdown-item minimize-card"><a href="javascript:"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
+                                                    <li class="dropdown-item close-card"><a href="javascript:"><i class="fas fa-eye-slash"></i> hide</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-block">
+                                        <form asp-action="AddEditProductCategory" asp-controller="ProductCategory" method="POST" id="productCategoryForm" enctype="multipart/form-data" autocomplete="off">
+                                            <input type="hidden" class="form-control" asp-for="ProductCategoryID">
+                                            <div class="form-group row">
+                                                <label class="col-sm-2">Name<span style="color: red">*</span></label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" asp-for="ProductCategoryName">
+                                                    <div class="input-group error-font-size">
+                                                        <span asp-validation-for="ProductCategoryName" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2"></div>
+                                            </div>
+
+                  
+                                            <div class="form-group row">
+                                                <label class="col-sm-2">Display Order<span style="color: red">*</span></label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" asp-for="DisplayOrder">
+                                                    <span style="color:#DC3545">Note*:Add number in which order you want to show this product category in menu.</span>
+                                                </div>
+                                                <div class="col-sm-2"></div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-2">Is Available</label>
+                                                <div class="col-sm-4">
+                                                    <div class="no-collapsable checked-fix checkbox checkbox-info checkbox-fill d-inline">
+                                                        <input type="checkbox" asp-for="IsAvailable" />
+                                                        <label for="IsAvailable" class="cr"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-2"></div>
+                                                <div class="col-sm-4">
+                                                    <button type="submit" id="btnSave" class="btn btn-primary">Save</button>
+                                                    <a type="button" href="@Url.Action("ProductCategoryList","ProductCategory")" class="btn btn-primary">Cancel</a>
+                                                </div>
+                                                <div class="col-sm-6"></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ fixed-menu ] end -->
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+﻿@model SpiceAndShine.Areas.Manager.Models.ManagerLoginModel
+<style>
+    div#CreateAccount::before {
+        background-color: #8f8e8e;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 15%;
+    }
+
+    div#CreateAccount::after {
+        background-color: #8f8e8e;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 15%;
+    }
+
+    #CreateAccount {
+        color: #5e6d55 !important;
+        padding-bottom: 10px;
+    }
+
+</style>
+
+<form asp-action="Login" id="manager-login-form" asp-controller="Login" method="POST" data-ajax-update="#dvAdminLogin" data-ajax="true" data-ajax-mode="before" data-ajax-success="onSuccessManagerLogin" data-ajax-loading="#loading" data-ajax-begin="OnAjaxBegin('#btnLogin')" data-ajax-complete="OnAjaxComplete('#btnLogin')" autocomplete="off">
+    @Html.AntiForgeryToken()
+    <div class="card-body text-center" style="padding:25px;">
+        <div class="mb-4">
+            <svg version="1.0" width="1200.000000pt" height="600.000000pt" viewBox="0 0 16.933 16.933" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" style="width: auto;height: 80px;">
+                <g xmlns="http://www.w3.org/2000/svg" transform="translate(0 -280.067)"><path fill="#fcb860" d="M 2.1166553,285.88749 H 14.816655 v 9.26042 H 2.1166553 Z" /><path fill="#fbb04f" d="m 14.023419,285.88749 1.1e-5,9.25989 h 0.793234 l -10e-6,-9.25989 z" color="#000" font-family="sans-serif" font-weight="400" overflow="visible" style="line-height:normal;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;text-orientation:mixed;shape-padding:0;isolation:auto;mix-blend-mode:normal" /><path fill="#fc6067" d="M8.4666655 280.8604c-2.1166701 0-2.9104201 1.05833-2.9104201 1.05833H2.9104152c-.2931599 0-.5291699.23601-.5291699.52917v1.05833H14.552085v-1.05833c0-.29316-.23601-.52917-.52917-.52917h-2.64583c0 0-.79375-1.05833-2.9104195-1.05833zM1.3229153 295.1479H15.610415v1.05833H1.3229153z" /><path fill="#fb4f56" d="m 3.1751652,285.6229 v 0.52918 c 0,0.58631 -0.4720198,1.05833 -1.0583399,1.05833 -0.58631,0 -1.05833,-0.47202 -1.05833,-1.05833 v -0.52918 z" /><path fill="#dbe1e7" d="m 5.2918052,285.6229 v 0.52918 c 0,0.58631 -0.4720199,1.05833 -1.05834,1.05833 -0.5863198,0 -1.0583299,-0.47202 -1.0583299,-1.05833 v -0.52918 z" /><path fill="#fb4f56" d="m 7.4084353,285.6229 v 0.52918 c 0,0.58631 -0.47201,1.05833 -1.0583301,1.05833 -0.5863199,0 -1.05834,-0.47202 -1.05834,-1.05833 v -0.52918 z" /><path fill="#dbe1e7" d="m 9.5250755,285.6229 v 0.52918 c 0,0.58631 -0.47202,1.05833 -1.05833,1.05833 -0.5863202,0 -1.0583403,-0.47202 -1.0583403,-1.05833 v -0.52918 z" /><path fill="#fb4f56" d="m 11.641715,285.6229 v 0.52918 c 0,0.58631 -0.47202,1.05833 -1.05833,1.05833 -0.5863195,0 -1.0583395,-0.47202 -1.0583395,-1.05833 v -0.52918 z" /><path fill="#dbe1e7" d="m 13.758355,285.6229 v 0.52918 c 0,0.58631 -0.47202,1.05833 -1.05834,1.05833 -0.58631,0 -1.05833,-0.47202 -1.05833,-1.05833 v -0.52918 z" /><path fill="#fb4f56" d="m 13.758325,285.6229 v 0.52918 c 0,0.58631 0.47202,1.05833 1.05834,1.05833 0.58632,0 1.05833,-0.47202 1.05833,-1.05833 v -0.52918 z" /><path fill="#fc6067" d="m 1.0583253,285.6229 1.32292,-2.11667 H 14.552075 l 1.32291,2.11667 z" /><path fill="#e7ebef" d="m 4.2333311,283.50623 -1.0583334,2.11667 h 2.1166667 l 0.79375,-2.11667 z m 3.4395833,0 -0.2645833,2.11667 h 2.1166664 l -0.264583,-2.11667 z m 3.1755156,0 0.79375,2.11667 h 2.116667 l -1.058334,-2.11667 z" /><path fill="#fb4f56" d="M13.432253 281.91873c.127815.14092.208161.3257.208256.52917v1.05833h.911572v-1.05833c0-.29316-.236006-.52917-.529167-.52917zM13.805874 283.50623c.407794.65309.815829 1.30602 1.223698 1.95906.03389.0456.05217.10084.05219.15761h.793234l-1.322916-2.11667z" color="#000" font-family="sans-serif" font-weight="400" overflow="visible" style="line-height:normal;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;text-orientation:mixed;shape-padding:0;isolation:auto;mix-blend-mode:normal" /><path fill="#fb3b43" d="m 15.081763,285.62341 v 0.52762 c 0,0.41691 -0.19654,0.78848 -0.500226,1.03146 0.07579,0.0171 0.154014,0.0279 0.235127,0.0279 0.586319,0 1.058333,-0.47203 1.058333,-1.05833 v -0.52866 z" color="#000" font-family="sans-serif" font-weight="400" overflow="visible" style="line-height:normal;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;text-orientation:mixed;shape-padding:0;isolation:auto;mix-blend-mode:normal" /><path fill="#fb4f56" d="m 14.816148,295.1479 v 1.05782 a 0.26460982,0.26460982 0 0 1 0,5.3e-4 h 0.794266 v -1.05834 z" color="#000" font-family="sans-serif" font-weight="400" overflow="visible" style="line-height:normal;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;text-orientation:mixed;shape-padding:0;isolation:auto;mix-blend-mode:normal" /><path fill="#e7ebef" d="m 3.1749752,295.1479 v -6.35 l 4.2333501,-1e-5 -1.01e-5,6.35001 z" /><path fill="#68b1fc" d="M8.4666455 288.79789h5.2917195l-.00001 4.76251H8.4666455zM4.2333152 289.85623h2.1166601v2.11667H4.2333152z" /><path fill="#4fa4fb" d="M5.5562478 289.85623v2.11667h.79375v-2.11667zM12.964581 288.7979v4.7625h.79375v-4.7625z" color="#000" font-family="sans-serif" font-weight="400" overflow="visible" style="line-height:normal;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;text-orientation:mixed;shape-padding:0;isolation:auto;mix-blend-mode:normal" /><path d="m 8.4666655,280.59633 c -1.1024203,9e-5 -1.8806102,0.27668 -2.3812503,0.56276 -0.41329,0.23616 -0.58063,0.41418 -0.6506099,0.49609 h -2.52491 c -0.43517,0 -0.79323,0.35756 -0.79323,0.79272 v 0.98237 l -1.28313001,2.0531 c -0.026,0.0422 -0.0396,0.091 -0.0393,0.14056 v 0.5271 c 10e-5,0.63741 0.45493001,1.17372 1.05678001,1.2976 v 7.4352 h -0.5271 c -0.14612,-5.3e-4 -0.26503,0.11743 -0.26561,0.26355 v 1.05834 c -5.292e-4,0.14692 0.11869,0.26617 0.26561,0.26561 H 15.610905 c 0.14611,-5.3e-4 0.2641,-0.11949 0.26355,-0.26561 v -1.05834 c -5.29e-4,-0.14531 -0.11824,-0.26297 -0.26355,-0.26355 h -0.52917 v -7.4352 c 0.60217,-0.12388 1.05833,-0.66015 1.05833,-1.2976 v -0.5271 c -1.2e-4,-0.0498 -0.0143,-0.0985 -0.0408,-0.14056 l -1.28313,-2.0531 v -0.98237 c 0,-0.43516 -0.35807,-0.79272 -0.79323,-0.79272 h -2.52698 c -0.0704,-0.0823 -0.23591,-0.2603 -0.64854,-0.49609 -0.50064,-0.28608 -1.2783295,-0.56267 -2.3807295,-0.56276 z m -5.29e-4,0.52969 c 1.014219,0 1.6918595,0.25098 2.1171795,0.49402 0.42533,0.24304 0.5824,0.45682 0.5824,0.45682 0.0499,0.0662 0.12792,0.10526 0.21084,0.10542 h 2.64636 c 0.15115,0 0.26355,0.11446 0.26355,0.26562 v 0.79323 H 2.6458353 v -0.79323 c 0,-0.15116 0.1129001,-0.26562 0.26406,-0.26562 h 2.6463501 c 0.0829,-1.6e-4 0.1609399,-0.0392 0.2108398,-0.10542 0,0 0.1565601,-0.21378 0.5818802,-0.45682 0.4253198,-0.24304 1.1029497,-0.49402 2.1171801,-0.49402 z m -5.9381412,2.64428 h 1.27848 l -0.7942601,1.58802 H 1.5358253 Z m 1.86965,0 h 1.3058701 l -0.5947903,1.58802 H 3.6033952 Z m 1.87121,0 h 1.1043201 l -0.1979001,1.58802 H 5.6725152 Z m 1.63711,0 h 1.1208602 l 0.19948,1.58802 H 7.7085752 Z m 1.6536402,0 h 1.1043295 l 0.59636,1.58802 H 9.7575455 Z m 1.6701895,0 h 1.30586 l 0.79375,1.58802 h -1.50379 z m 1.8991,0 h 1.2759 l 0.99375,1.58802 h -1.47588 z m -11.8049497,2.11718 h 1.58595 v 0.26355 c 0,0.44431 -0.34892,0.7953 -0.79323,0.7953 -0.44431,0 -0.79265,-0.35095 -0.79272,-0.7953 z m 2.1151201,0 h 1.5880199 v 0.26355 c 0,0.44431 -0.3489201,0.7953 -0.7932401,0.7953 -0.4443098,0 -0.7947899,-0.351 -0.7947798,-0.7953 z m 2.11718,0 h 1.5880199 v 0.26355 c 0,0.44431 -0.3509801,0.7953 -0.7952999,0.7953 -0.4443201,0 -0.7927401,-0.35101 -0.79272,-0.7953 z m 2.1171897,0 h 1.5880104 v 0.26355 c 0,0.44431 -0.351,0.7953 -0.7953,0.7953 -0.44432,0 -0.7927302,-0.35101 -0.7927104,-0.7953 z m 2.1161504,0 h 1.5869795 v 0.26355 c 0,0.44431 -0.34892,0.7953 -0.79323,0.7953 -0.43952,0 -0.7857895,-0.34388 -0.7932395,-0.78135 5e-5,-0.005 5.29e-4,-0.009 5.29e-4,-0.0139 z m 2.1161495,0 h 1.58801 v 0.26355 c 0,0.44431 -0.34839,0.7953 -0.79271,0.7953 -0.4443,0 -0.79532,-0.35101 -0.7953,-0.7953 z m 2.11718,0 h 1.58802 v 0.26355 c 0,0.44431 -0.35048,0.7953 -0.79479,0.7953 -0.44432,0 -0.79325,-0.35101 -0.79323,-0.7953 z m -11.1130197,2.9099 v 6.08645 c -0.1184101,7e-5 -0.41728,-8e-5 -0.52968,0 v -7.43727 c 0.3235,-0.0672 0.60378,-0.24301 0.79478,-0.50023 0.2419099,0.32486 0.6250599,0.52917 1.0588499,0.52917 0.43366,0 0.8164502,-0.20397 1.05782,-0.52865 0.2413701,0.32468 0.6236502,0.52865 1.0573002,0.52865 0.4338198,0 0.8174598,-0.20427 1.0593699,-0.52917 0.24134,0.32502 0.6244102,0.52917 1.0583302,0.52917 0.43382,0 0.81694,-0.20427 1.05885,-0.52917 0.24134,0.32502 0.6238995,0.52917 1.0578195,0.52917 0.43391,0 0.81699,-0.20415 1.05833,-0.52917 0.24191,0.3249 0.62555,0.52917 1.05937,0.52917 0.43365,0 0.81593,-0.20397 1.0573,-0.52865 0.19084,0.25672 0.47084,0.43186 0.79375,0.49919 v 7.43779 h -1.05834 c -0.36069,-0.008 -0.36069,0.53717 0,0.52917 h 1.85157 v 0.52916 H 1.5874953 V 295.413 h 9.5255197 c 0.36069,0.008 0.36069,-0.53717 0,-0.52917 -1.6675895,0 -2.2161095,1.7e-4 -3.4395799,0 v -6.08645 c -5.291e-4,-0.14612 -0.1194998,-0.2641 -0.2656199,-0.26355 H 3.1618154 c -0.14903,0.0136 -0.25205,0.12753 -0.2519201,0.26355 z m 5.2927002,0 v 4.76405 c 5.29e-4,0.14552 0.11855,0.26326 0.26407,0.26355 h 5.2906295 c 0.14612,5.3e-4 0.26503,-0.11743 0.26562,-0.26355 v -4.76405 c -5.29e-4,-0.14612 -0.1195,-0.26411 -0.26562,-0.26355 H 8.4537455 c -0.14826,0.0136 -0.25128,0.12753 -0.25115,0.26355 z m -4.7635301,0.26614 h 3.7051999 v 5.82031 c -1.25364,-1.6e-4 -2.83243,-2.6e-4 -3.7051999,0 z m 5.2932201,0 h 4.7614595 v 4.2323 H 8.7322855 Z m -4.5258303,0.52916 c -0.1353399,0.0136 -0.2383599,0.12753 -0.23822,0.26355 v 2.11718 c 5.292e-4,0.14612 0.1194901,0.26411 0.26561,0.26356 h 2.1151202 c 0.1461198,5.3e-4 0.2650299,-0.11743 0.2656199,-0.26356 v -2.11718 c -5.291e-4,-0.14612 -0.1195001,-0.26411 -0.2656199,-0.26355 H 4.2338452 c -0.009,-5.3e-4 -0.018299,-5.3e-4 -0.0274,0 z m 0.29146,0.5271 h 1.5875 v 1.58802 h -1.5875 z m 7.6594798,4.76405 c -0.35842,0.0254 -0.33153,0.53945 0.0139,0.52917 h 0.263549 c 0.3607,0.008 0.3607,-0.53717 0,-0.52917 z" color="#000" font-family="sans-serif" font-weight="400" overflow="visible" style="line-height:normal;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;text-orientation:mixed;shape-padding:0;isolation:auto;mix-blend-mode:normal" /></g>
+            </svg>
+        </div>
+        <h3 class="mb-4">Login</h3>
+        <div class="mb-3" id="error_area" style="display:none">
+            <div asp-validation-summary="All"></div>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" asp-for="EmailOrMobileNo" class="form-control" placeholder="Email / Mobile Number">
+            <div class="input-group error-font-size">
+                <span asp-validation-for="EmailOrMobileNo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="input-group mb-4">
+            <input type="password" asp-for="Password" class="form-control" placeholder="Password">
+            <div class="input-group error-font-size">
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div id="ForgottonPassword">Forgot password?</div>
+        </div>
+
+        <div><button type="submit" id="btnLogin" class="btn btn-primary shadow-2 mb-4"><i class="fas fa-spinner fa-pulse hide"></i>Login</button></div>
+
+
+
+    </div>
+</form>
+<script>
+
+    function OnAjaxBegin(id) {
+        $(id).prop("disabled", true);
+        $(id).find('i').removeClass("hide");
+    }
+
+    function OnAjaxComplete(id) {
+        $(id).prop("disabled", false);
+        $(id).find('i').addClass("hide");
+    }
+
+    function showToastPortal(ToastType, Title, Message, Timeout) {
+        $.toaster({ priority: ToastType, title: Title, message: Message, timeout: Timeout });
+    }
+
+    function onSuccessManagerLogin(result) {
+        debugger
+        if (result.status == 4) { // Successfully Login
+
+            window.location.href = siteURLPortal + 'dashboard';
+
+
+        }
+        else {
+            showToastPortal('danger', '', result.message, 5000);
+        }
+    }
+
+</script>

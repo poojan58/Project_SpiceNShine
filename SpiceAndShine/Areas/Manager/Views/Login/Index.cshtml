@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.MetaTitle = "Index";
+}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Spice And Shine - @ViewBag.MetaTitle</title>
+
+    <environment names="Development,Staging,Production">
+
+        <link href="@Common.SiteCDNBaseURL/css/bundleCss/header.min.css" rel="stylesheet" asp-append-version="true" asp-fallback-href="~/css/bundleCss/header.min.css" asp-fallback-test-class="header-min-css-fallback" asp-fallback-test-property="position" asp-fallback-test-value="absolute" asp-suppress-fallback-integrity="false" />
+        <link href="@Common.SiteCDNBaseURL/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" asp-append-version="true" asp-fallback-href="~/fonts/fontawesome/css/fontawesome-all.min.css" asp-fallback-test-class="fa-stack" asp-fallback-test-property="position" asp-fallback-test-value="relative" asp-suppress-fallback-integrity="false" />
+        <link href="@Common.SiteCDNBaseURL/fonts/feather/css/feather.css" rel="stylesheet" asp-append-version="true" asp-fallback-href="~/fonts/feather/css/feather.css" asp-fallback-test-class="feather" asp-fallback-test-property="speak" asp-fallback-test-value="none" asp-suppress-fallback-integrity="false" />
+        <script src="@Common.SiteCDNBaseURL/js/bundleJs/header.min.js" asp-append-version="true" asp-fallback-src="~/js/bundleJs/header.min.js" asp-fallback-test="window.jQuery" asp-suppress-fallback-integrity="false"></script>
+        <link rel="icon" href="~/images/favIcon.png" type="image/x-icon">
+
+        <script>
+            var siteURL = "@Common.SiteURL";
+            var siteURLPortal = "@Common.SiteURL" + "manager/";
+      
+            $(window).on("load", function () {
+                $('#loading').fadeOut(400, function () { $(this).hide(); });
+                $('#loadingbar').fadeOut(400, function () { $(this).hide(); });
+            });
+        </script>
+
+    </environment>
+</head>
+<body>
+    <div id="loading" class="active" style="display:block;">
+        <div class="loading-inner">
+            <div class="loading-circle-wrapper">
+                <div class="loading-circle">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loadingbar" class="loader-bg" style="display:block;">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <div class="auth-wrapper">
+        <div class="auth-content">
+            <div class="auth-bg">
+                
+            </div>
+
+            <div class="card" id="dvAdminLogin">
+                <p>
+                    @if (!string.IsNullOrEmpty(ViewBag.Message))
+                    {
+                        <script>
+                            $(document).ready(function () {
+                                showToast('@ViewBag.MessageType', '', '@ViewBag.Message', 0);
+                            });
+                        </script>
+                    }
+                </p>
+                <partial name="_ManagerLogin" />
+            </div>
+        </div>
+    </div>
+  
+</body>
+</html>
